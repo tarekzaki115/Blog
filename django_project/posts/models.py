@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from accounts.models import customUser
 
+#"hhhhhheeeeeelllllooooooooo"
 
 class Post(models.Model):
     author = models.ForeignKey(
