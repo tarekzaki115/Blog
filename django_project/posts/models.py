@@ -4,7 +4,9 @@ from accounts.models import customUser
 
 
 class Post(models.Model):
-    author = models.ForeignKey(customUser, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        customUser, on_delete=models.CASCADE, blank=False, null=False
+    )
     title = models.CharField(max_length=50)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

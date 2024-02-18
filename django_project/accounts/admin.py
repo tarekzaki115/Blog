@@ -13,13 +13,17 @@ class CustomUserAdmin(UserAdmin):
     list_display = [
         "email",
         "username",
-        "name",
+        "age",
         "is_staff",
     ]
 
-    fieldsets = UserAdmin.fieldsets + ((None, {"fields": ("name",)}),)
+    # fieldsets = UserAdmin.fieldsets + ((None, {"fields": ("name",)}),)
 
-    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("name",)}),)
+    # add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("name",)}),)
+
+    fieldsets = UserAdmin.fieldsets + ((None, {"fields": ("age",)}),)
+
+    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("age",)}),)
 
 
 admin.site.register(customUser, CustomUserAdmin)
